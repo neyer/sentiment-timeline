@@ -91,11 +91,11 @@ WSGI_APPLICATION = 'timeline.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'timeline',
-        'USER': 'mark_db',
-        'PASSWORD': 'password',
-        'HOST': 'localhost'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'timeline.sqlite',
+      # 'USER': 'mark_db',
+      # 'PASSWORD': 'password',
+      # 'HOST': 'localhost'
     }
 }
 

@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 from entries.models import Entry
+import os
 class Command(BaseCommand):
     help = 'Loads data from an mbox file and generates a json file for the chart.'
 
@@ -13,4 +14,6 @@ class Command(BaseCommand):
           options['from_email_address'],
       )
 
-      Entry.write_series_to_file('/entries/static/moods.json')
+
+      file_path = os.path.join(os.getcwd(), 'entries', 'static', 'moods.json')
+      Entry.write_series_to_file(file_path)
