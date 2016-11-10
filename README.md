@@ -12,13 +12,13 @@ The program then uses [VADER sentiment analysis](http://www.nltk.org/_modules/nl
 * Run `python manage.py migrate` to  create your database
 * Run `python manage.py build_chart <your gmail address> <path to your data file>` . This will take a while.  The python library for parsing mbox files first builds a massive index, so you'll see very litle output at first, especially if your data file is huge.
 
-* Run 'python manage.py runserver', and visit 127.0.0.1:8000
+* Run `python manage.py runserver`, and visit 127.0.0.1:8000
 
 
 # Notes:
 
 * It make ask you to download some data files for the nltk dataset. [This page has more info.](http://www.nltk.org/data.html)
-*  To make it go faster, use a proper database instead of sqlite. The settings are in timeline/settings.py.$
+*  To make it go faster, use a proper database instead of sqlite. The settings are in timeline/settings.py.
 * The web server is just hosting static files, it's not really needed. The 'template' in 'entries/templatesentries/index.html' is just a static file which makes a refernces to moods.json. I created this app as a django project so I could get the ORM, which I only kind of sort of used. 
 
 * There is also some code inside to compute trigram frequency tables. You can also compute the delta of two trigram frequency tables. I used this to see how my language had changed over time. Feel free to poke around!
